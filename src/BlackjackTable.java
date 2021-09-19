@@ -33,11 +33,15 @@ public class BlackjackTable {
 
         while (true) {
             // prompt bets
-            System.out.println("Bets");
+            System.out.println("Bets - \"exit\" to abort game.");
             System.out.println("---------");
             for (int i = 1; i <= numPlayers; i++) {
                 System.out.print(players.get(i).getName() + "'s starting bet: ");
-                int startingBet = Integer.parseInt(scan.nextLine());
+                String input = scan.nextLine();
+                if (input.equals("exit")) {
+                    return;
+                }
+                int startingBet = Integer.parseInt(input);
                 players.get(i).raise(startingBet);
             }
             System.out.println();

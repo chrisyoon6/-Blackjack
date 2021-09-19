@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlayerTest {
 
     @Test
-    void tryRaisingThreeTimesWithOneNeg() {
+    void RaisingThreeTimesWithOneNeg() {
         Deck deck = new Deck();
         Player player1 = new Player("Player1", 50);
 
