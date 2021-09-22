@@ -1,17 +1,27 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class represents a table where Blackjack is being played
+ */
 public class BlackjackTable {
     private Scanner scan;
     Deck deck;
     ArrayList<Player> players;
 
+    /**
+     * Creates a new Blackjack table
+     * @param scanner scanner for the user input
+     */
     public BlackjackTable(Scanner scanner) {
         this.scan = scanner;
         this.deck = new Deck();
         this.players = new ArrayList<>();
     }
 
+    /**
+     * Program loop; starts the Blackjack game // TODO: make changes to output format, divide code segments
+     */
     public void start() {
         deck.shuffle();
         players.add(new Player("DEALER", 1000)); // TODO add variable for dealer or new class
@@ -123,6 +133,9 @@ public class BlackjackTable {
         }
     }
 
+    /**
+     * Prints the Blackjack table to the command prompt
+     */
     public void printTable() {
         for (int i = 0; i < players.size(); i++) {
             System.out.println(players.get(i));
